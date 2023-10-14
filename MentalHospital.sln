@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{E5B9B828-A5DA-4718-9217-6FD9827BC8AD}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{FC42153B-5FED-4BD9-8CC5-B1598F33B5D6}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalHospital.API", "MentalHospital.API\MentalHospital.API.csproj", "{10550D53-E62F-4883-8CE6-4AAE2FD1C9AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +16,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E5B9B828-A5DA-4718-9217-6FD9827BC8AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5B9B828-A5DA-4718-9217-6FD9827BC8AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5B9B828-A5DA-4718-9217-6FD9827BC8AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5B9B828-A5DA-4718-9217-6FD9827BC8AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10550D53-E62F-4883-8CE6-4AAE2FD1C9AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10550D53-E62F-4883-8CE6-4AAE2FD1C9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10550D53-E62F-4883-8CE6-4AAE2FD1C9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10550D53-E62F-4883-8CE6-4AAE2FD1C9AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

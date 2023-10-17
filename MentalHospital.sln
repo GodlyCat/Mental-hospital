@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentalHospital.DAL", "MentalHospital.DAL\MentalHospital.DAL.csproj", "{EA071B1F-4B90-4475-95E6-EA8D1E13DB07}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalHospital.API", "MentalHospital.API\MentalHospital.API.csproj", "{10550D53-E62F-4883-8CE6-4AAE2FD1C9AF}"
 EndProject
 Global
@@ -16,6 +18,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5B9B828-A5DA-4718-9217-6FD9827BC8AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B9B828-A5DA-4718-9217-6FD9827BC8AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5B9B828-A5DA-4718-9217-6FD9827BC8AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B9B828-A5DA-4718-9217-6FD9827BC8AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA071B1F-4B90-4475-95E6-EA8D1E13DB07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA071B1F-4B90-4475-95E6-EA8D1E13DB07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA071B1F-4B90-4475-95E6-EA8D1E13DB07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA071B1F-4B90-4475-95E6-EA8D1E13DB07}.Release|Any CPU.Build.0 = Release|Any CPU
 		{10550D53-E62F-4883-8CE6-4AAE2FD1C9AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{10550D53-E62F-4883-8CE6-4AAE2FD1C9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10550D53-E62F-4883-8CE6-4AAE2FD1C9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU

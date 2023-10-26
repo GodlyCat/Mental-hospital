@@ -6,14 +6,9 @@ namespace MentalHospital.DAL.Entities
     {
         public DbSet<Patient> Patients { get; set; }
 
-        public ApplicationDbContext()
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
             Database.EnsureCreated();
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql("connectionString");
         }
     }
 }

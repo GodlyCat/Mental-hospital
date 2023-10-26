@@ -1,17 +1,22 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MentalHospital.DAL.Entities;
+using MentalHospital.DAL.interfaces;
+using MentalHospital.DAL.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MentalHospital.DAL.Extensions
 {
     static class DataAccessDIExtension
     {
-        public static void AdddataAccess(this IServiceCollection services)
+        public static void AdddataAccess(this IServiceCollection services, IConfiguration config)
         {
+            services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseNpgsql(config.GetConnectionString("DefaultConnection"));
+            });
 
+            services.AddScoped<IRepository<Patient>, PatientRepository>();
         }
     }
 }

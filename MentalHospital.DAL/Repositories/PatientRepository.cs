@@ -46,20 +46,8 @@ namespace MentalHospital.DAL.Repositories
 
         public async Task<Patient> Update(Patient entity)
         {
-            var targetEntity = _context.Patients.FirstOrDefault(p => p.Id == entity.Id);
-            if (targetEntity != null)
-            {
-                targetEntity.Name = entity.Name;
-                targetEntity.Diagnosis = entity.Diagnosis;
-                targetEntity.ChamberNumber = entity.ChamberNumber;
-                targetEntity.Therapy = entity.Therapy;
-                targetEntity.PersonalDoctorId = entity.PersonalDoctorId;
-                targetEntity.PersonalDoctor = entity.PersonalDoctor;
-                targetEntity.RegistredAt = entity.RegistredAt;
-                targetEntity.DeregistredAt = entity.DeregistredAt;
-
-                await _context.SaveChangesAsync();
-            }
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
             return entity;
         }
     }

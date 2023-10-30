@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace MentalHospital.DAL.Extensions
 {
-    static class DataAccessDIExtension
+    public static class DataAccessDIExtension
     {
         public static void AdddataAccess(this IServiceCollection services, IConfiguration config)
         {

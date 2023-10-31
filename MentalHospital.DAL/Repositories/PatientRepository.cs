@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MentalHospital.DAL.Repositories
 {
-    internal class PatientRepository : IRepository<Patient>
+    public class PatientRepository : IRepository<Patient>
     {
-        ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public PatientRepository(ApplicationDbContext context)
         {

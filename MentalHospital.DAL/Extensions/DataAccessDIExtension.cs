@@ -9,11 +9,11 @@ namespace MentalHospital.DAL.Extensions
 {
     public static class DataAccessDIExtension
     {
-        public static void AdddataAccess(this IServiceCollection services, IConfiguration config)
+        public static void AddDataAccess(this IServiceCollection services, IConfiguration config)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseNpgsql(config.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
             });
 
             services.AddScoped<IRepository<Patient>, PatientRepository>();

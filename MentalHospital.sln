@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalHospital.API", "MentalHospital.API\MentalHospital.API.csproj", "{10550D53-E62F-4883-8CE6-4AAE2FD1C9AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentalHospital.DAL", "MentalHospital.DAL\MentalHospital.DAL.csproj", "{0D05D905-F857-4469-ACBA-E19E4F944C62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalHospital.DAL", "MentalHospital.DAL\MentalHospital.DAL.csproj", "{0D05D905-F857-4469-ACBA-E19E4F944C62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentalHospital.BLL", "MentalHospital.BLL\MentalHospital.BLL.csproj", "{0CC17013-654A-434D-914D-B0414C67180D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{0D05D905-F857-4469-ACBA-E19E4F944C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D05D905-F857-4469-ACBA-E19E4F944C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D05D905-F857-4469-ACBA-E19E4F944C62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CC17013-654A-434D-914D-B0414C67180D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CC17013-654A-434D-914D-B0414C67180D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CC17013-654A-434D-914D-B0414C67180D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CC17013-654A-434D-914D-B0414C67180D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace MentalHospital.DAL.interfaces
+namespace MentalHospital.DAL.Interfaces
 {
-    internal interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         Task<T> Get(string id);
         Task<IEnumerable<T>> GetAll();

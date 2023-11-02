@@ -1,4 +1,4 @@
-﻿using MentalHospital.DAL.interfaces;
+﻿using MentalHospital.DAL.Interfaces;
 using MentalHospital.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 

@@ -6,12 +6,12 @@ using MentalHospital.DAL.Entities;
 
 namespace MentalHospital.BLL.Services
 {
-    public class PatientService : IService<PatientModel>
+    public class PatientService : IPatientService
     {
-        private readonly IRepository<Patient> _repository;
+        private readonly IPatientRepository _repository;
         private readonly IMapper _mapper;
 
-        public PatientService(IRepository<Patient> repository, IMapper maper)
+        public PatientService(IPatientRepository repository, IMapper maper)
         {
             _repository = repository;
             _mapper = maper;

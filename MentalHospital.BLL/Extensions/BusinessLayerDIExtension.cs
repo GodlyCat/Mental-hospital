@@ -11,7 +11,7 @@ namespace MentalHospital.BLL.Extensions
     {
         public static void AddBusinessLayer(this IServiceCollection services, IConfiguration config)
         {
-            services.AddScoped<IService<PatientModel>, PatientService>();
+            services.AddScoped<IPatientService, PatientService>();
             services.AddDataAccess(config);
         }
     }

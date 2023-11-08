@@ -1,14 +1,14 @@
-﻿using System.Threading.Tasks;
+﻿using MentalHospital.DAL.Entities;
 
 namespace MentalHospital.DAL.Interfaces
 {
-    public interface IRepository<T> where T : class
+    public interface IPatientRepository
     {
-        Task<T> Get(string id);
-        Task<IEnumerable<T>> GetAll();
-        Task<T> Create(T entity);
-        Task<T> Update(T entity);
-        Task<T> Delete(string id);
+        Task<Patient> Get(string id);
+        Task<IEnumerable<Patient>> GetAll();
+        Task<Patient> Create(Patient entity);
+        Task<Patient> Update(Patient entity);
+        Task<Patient> Delete(string id);
 
     }
 }

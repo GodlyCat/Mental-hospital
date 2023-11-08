@@ -1,12 +1,14 @@
-﻿namespace MentalHospital.BLL.Interfaces
+﻿using MentalHospital.BLL.Models;
+
+namespace MentalHospital.BLL.Interfaces
 {
-    public interface IService<T> where T : class
+    public interface IPatientService
     {
-        Task<T> Get(string id);
-        Task<IEnumerable<T>> GetAll();
-        Task<T> Create(T model);
-        Task<T> Update(T model);
-        Task<T> Delete(string id);
+        Task<PatientModel> Get(string id);
+        Task<IEnumerable<PatientModel>> GetAll();
+        Task<PatientModel> Create(PatientModel model);
+        Task<PatientModel> Update(PatientModel model);
+        Task<PatientModel> Delete(string id);
 
     }
 }

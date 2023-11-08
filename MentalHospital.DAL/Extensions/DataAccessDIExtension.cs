@@ -16,7 +16,7 @@ namespace MentalHospital.DAL.Extensions
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddScoped<IRepository<Patient>, PatientRepository>();
+            services.AddScoped<IPatientRepository, PatientRepository>();
         }
     }
 }

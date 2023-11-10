@@ -1,10 +1,10 @@
-﻿using MentalHospital.DAL.interfaces;
+﻿using MentalHospital.DAL.Interfaces;
 using MentalHospital.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace MentalHospital.DAL.Repositories
 {
-    public class PatientRepository : IRepository<Patient>
+    public class PatientRepository : IPatientRepository
     {
         private readonly ApplicationDbContext _context;
 

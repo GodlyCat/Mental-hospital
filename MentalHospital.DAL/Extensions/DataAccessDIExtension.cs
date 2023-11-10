@@ -1,5 +1,5 @@
 ﻿using MentalHospital.DAL.Entities;
-using MentalHospital.DAL.interfaces;
+using MentalHospital.DAL.Interfaces;
 using MentalHospital.DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -16,7 +16,7 @@ namespace MentalHospital.DAL.Extensions
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddScoped<IRepository<Patient>, PatientRepository>();
+            services.AddScoped<IPatientRepository, PatientRepository>();
         }
     }
 }

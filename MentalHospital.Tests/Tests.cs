@@ -1,12 +1,13 @@
 ﻿using Xunit;
 using Moq;
 using AutoMapper;
+using Shouldly;
 using MentalHospital.BLL.Mapper;
 using MentalHospital.BLL.Models;
 using MentalHospital.BLL.Services;
 using MentalHospital.DAL.Interfaces;
 using MentalHospital.DAL.Entities;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace MentalHospital.Tests
 {
@@ -15,6 +16,9 @@ namespace MentalHospital.Tests
         private readonly IMapper mapper = new Mapper(new MapperConfiguration(
             cfg => cfg.AddProfile<MappingProfile>()));
         private Mock<IPatientRepository> MockPatientRep = new Mock<IPatientRepository>();
+
+        private readonly string notAssignedMsg = "Method returned value is not assingable with expected type";
+        private readonly string isNullMsg = "Method returns null value";
 
         [Fact]
         public void CreaateReturnValue()
@@ -29,7 +33,9 @@ namespace MentalHospital.Tests
             var result = pService.Create(pModel);
 
             //Assert
-            Assert.IsAssignableFrom<Task<PatientModel>>(result); 
+            result.ShouldNotBeNull(isNullMsg);
+            result.ShouldBeAssignableTo<Task<PatientModel>>(notAssignedMsg);
+            
         }
 
         [Fact]
@@ -45,7 +51,8 @@ namespace MentalHospital.Tests
             var result = pService.Delete("AnyID");
 
             //Assert
-            Assert.IsAssignableFrom<Task<PatientModel>>(result);
+            result.ShouldNotBeNull(isNullMsg);
+            result.ShouldBeAssignableTo<Task<PatientModel>>(notAssignedMsg);
         }
 
         [Fact]
@@ -61,7 +68,8 @@ namespace MentalHospital.Tests
             var result = pService.Get("AnyID");
 
             //Assert
-            Assert.IsAssignableFrom<Task<PatientModel>>(result);
+            result.ShouldNotBeNull(isNullMsg);
+            result.ShouldBeAssignableTo<Task<PatientModel>>(notAssignedMsg);
         }
 
         [Fact]
@@ -79,7 +87,8 @@ namespace MentalHospital.Tests
             var result = pService.GetAll();
 
             //Assert
-            Assert.IsAssignableFrom<Task<IEnumerable<PatientModel>>>(result);
+            result.ShouldNotBeNull(isNullMsg);
+            result.ShouldBeAssignableTo<Task<IEnumerable<PatientModel>>>(notAssignedMsg);
         }
 
         [Fact]
@@ -95,7 +104,8 @@ namespace MentalHospital.Tests
             var result = pService.Update(pModel);
 
             //Assert
-            Assert.IsAssignableFrom<Task<PatientModel>>(result);
+            result.ShouldNotBeNull(isNullMsg);
+            result.ShouldBeAssignableTo<Task<PatientModel>>(notAssignedMsg);
         }
 
         private PatientModel InitialPatientModel()

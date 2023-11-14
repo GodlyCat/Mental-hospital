@@ -15,96 +15,74 @@ namespace MentalHospital.Tests
     {
         private readonly IMapper mapper = new Mapper(new MapperConfiguration(
             cfg => cfg.AddProfile<MappingProfile>()));
-        private Mock<IPatientRepository> MockPatientRep = new Mock<IPatientRepository>();
-
+        private Mock<IPatientRepository> stubPatientRepository = new Mock<IPatientRepository>();
         private readonly string notAssignedMsg = "Method returned value is not assingable with expected type";
-        private readonly string isNullMsg = "Method returns null value";
 
         [Fact]
-        public void CreaateReturnValue()
+        public void Creaate_InputPatientModel_ReturnSameType()
         {
-            //Arrange
-            var pModel = InitialPatientModel();
-            MockPatientRep.Setup(pRep => pRep.Create(It.IsAny<Patient>()))
+            var patientModel = InitialPatientModel();
+            stubPatientRepository.Setup(rep => rep.Create(It.IsAny<Patient>()))
                 .Returns<Task<Patient>>(patient => patient);
-            var pService = new PatientService(MockPatientRep.Object, mapper);
+            var patientService = new PatientService(stubPatientRepository.Object, mapper);
 
-            //Act
-            var result = pService.Create(pModel);
+            var result = patientService.Create(patientModel);
 
-            //Assert
-            result.ShouldNotBeNull(isNullMsg);
             result.ShouldBeAssignableTo<Task<PatientModel>>(notAssignedMsg);
             
         }
 
         [Fact]
-        public void DeleteReturnValue()
+        public void Delete_InputPatientModel_ReturnSameType()
         {
-            //Arrange
-            var pEntity = InitialPatientEntity();
-            MockPatientRep.Setup(rep => rep.Delete(It.IsAny<string>()))
-                .ReturnsAsync(pEntity);
-            var pService = new PatientService(MockPatientRep.Object, mapper);
+            var patientEntity = InitialPatientEntity();
+            stubPatientRepository.Setup(rep => rep.Delete(It.IsAny<string>()))
+                .ReturnsAsync(patientEntity);
+            var patientService = new PatientService(stubPatientRepository.Object, mapper);
 
-            //Act
-            var result = pService.Delete("AnyID");
+            var result = patientService.Delete("AnyID");
 
-            //Assert
-            result.ShouldNotBeNull(isNullMsg);
             result.ShouldBeAssignableTo<Task<PatientModel>>(notAssignedMsg);
         }
 
         [Fact]
-        public void GetReturnValue()
+        public void Get_InputSomeString_ReturnPatientModel()
         {
-            //Arrange
-            var pEntity = InitialPatientEntity();
-            MockPatientRep.Setup(rep => rep.Get(It.IsAny<string>()))
-                .ReturnsAsync(pEntity);
-            var pService = new PatientService(MockPatientRep.Object, mapper);
+            var patientEntity = InitialPatientEntity();
+            stubPatientRepository.Setup(rep => rep.Get(It.IsAny<string>()))
+                .ReturnsAsync(patientEntity);
+            var patientService = new PatientService(stubPatientRepository.Object, mapper);
 
-            //Act
-            var result = pService.Get("AnyID");
+            var result = patientService.Get("AnyID");
 
-            //Assert
-            result.ShouldNotBeNull(isNullMsg);
             result.ShouldBeAssignableTo<Task<PatientModel>>(notAssignedMsg);
         }
 
         [Fact]
-        public void GetAllReturnValue()
+        public void GetAll_CommonInvoking_ReturnPatientModelCollection()
         {
-            //Arrange
-            var pEntity = InitialPatientEntity();
-            MockPatientRep.Setup(rep => rep.GetAll())
+            var patientEntity = InitialPatientEntity();
+            stubPatientRepository.Setup(rep => rep.GetAll())
                 .ReturnsAsync(new List<Patient>(){
-                    pEntity
+                    patientEntity
                 });
-            var pService = new PatientService(MockPatientRep.Object, mapper);
+            var patientService = new PatientService(stubPatientRepository.Object, mapper);
 
-            //Act
-            var result = pService.GetAll();
+            var result = patientService.GetAll();
 
-            //Assert
-            result.ShouldNotBeNull(isNullMsg);
             result.ShouldBeAssignableTo<Task<IEnumerable<PatientModel>>>(notAssignedMsg);
         }
 
         [Fact]
-        public void UpdateReturnValue()
+        public void Update_InputPatientModel_ReturnSameType()
         {
-            //Arrange
-            var pModel = InitialPatientModel();
-            MockPatientRep.Setup(rep => rep.Update(It.IsAny<Patient>()))
+            var patientModel = InitialPatientModel();
+            stubPatientRepository.Setup(rep => rep.Update(It.IsAny<Patient>()))
                 .Returns<Task<Patient>>(patient => patient);
-            var pService = new PatientService(MockPatientRep.Object, mapper);
+            var patientService = new PatientService(stubPatientRepository.Object, mapper);
 
-            //Act
-            var result = pService.Update(pModel);
+            var result = patientService.Update(patientModel);
 
-            //Assert
-            result.ShouldNotBeNull(isNullMsg);
             result.ShouldBeAssignableTo<Task<PatientModel>>(notAssignedMsg);
         }
 

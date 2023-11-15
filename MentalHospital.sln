@@ -14,7 +14,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalHospital.DAL", "Menta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalHospital.BLL", "MentalHospital.BLL\MentalHospital.BLL.csproj", "{0CC17013-654A-434D-914D-B0414C67180D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentalHospital.Tests", "MentalHospital.Tests\MentalHospital.Tests.csproj", "{4E31A866-C7C0-4CA1-900E-FB5806575E65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalHospital.Tests_MentalHospital.BLL", "MentalHospital.Tests\MentalHospital.Tests_MentalHospital.BLL.csproj", "{4E31A866-C7C0-4CA1-900E-FB5806575E65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

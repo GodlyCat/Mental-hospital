@@ -14,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalHospital.DAL", "Menta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalHospital.BLL", "MentalHospital.BLL\MentalHospital.BLL.csproj", "{0CC17013-654A-434D-914D-B0414C67180D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalHospital.Tests_MentalHospital.BLL", "MentalHospital.Tests\MentalHospital.Tests_MentalHospital.BLL.csproj", "{4E31A866-C7C0-4CA1-900E-FB5806575E65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalHospital.BLL.Tests", "MentalHospital.Tests\MentalHospital.BLL.Tests.csproj", "{4E31A866-C7C0-4CA1-900E-FB5806575E65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A5897DA7-5443-4008-A220-23473881E8B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4E31A866-C7C0-4CA1-900E-FB5806575E65} = {A5897DA7-5443-4008-A220-23473881E8B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E077805B-D510-4097-AB80-C4A723553FB5}

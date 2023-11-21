@@ -1,6 +1,4 @@
-﻿using MentalHospital.DAL.Entities;
-
-namespace MentalHospital.BLL.Tests.Data.Entities
+﻿namespace MentalHospital.BLL.Tests.Data.Entities
 {
     internal static class PatientEntityData
     {

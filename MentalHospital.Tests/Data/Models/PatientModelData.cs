@@ -1,11 +1,4 @@
-﻿using MentalHospital.BLL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MentalHospital.BLL.Tests.Data.Models
+﻿namespace MentalHospital.BLL.Tests.Data.Models
 {
     internal static class PatientModelData
     {

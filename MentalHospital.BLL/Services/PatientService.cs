@@ -20,7 +20,7 @@ namespace MentalHospital.BLL.Services
 
         public async Task<PatientModel> Create(PatientModel model)
         {
-            var entity = _repository.Create(_mapper.Map<Patient>(model));
+            var entity = await _repository.Create(_mapper.Map<Patient>(model));
             return _mapper.Map<PatientModel>(entity);
         }
 

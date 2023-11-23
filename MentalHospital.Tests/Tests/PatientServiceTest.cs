@@ -4,12 +4,12 @@ using MentalHospital.BLL.Tests.Data.Models;
 
 namespace MentalHospital.BLL.Tests
 {
-    public class CrudOperationTests_PatientService
+    public class PatientServiceTest
     {
         private readonly PatientService patientService;
         private readonly Mock<IPatientRepository> mockPatientRepository;
 
-        public CrudOperationTests_PatientService()
+        public PatientServiceTest()
         {
             var mockMapper = new Mock<IMapper>();
             mockPatientRepository = new Mock<IPatientRepository>();

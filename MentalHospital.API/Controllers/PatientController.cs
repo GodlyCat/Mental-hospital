@@ -48,6 +48,7 @@ namespace MentalHospital.API.Controllers
         [HttpPut]
         public async Task<PatientViewModel> Update(PatientViewModel model)
         {
+            _validator.ValidateAndThrow(model);
             return _mapper.Map<PatientViewModel>(
                 await _patientService.Update(_mapper.Map<PatientModel>(model)));
         }

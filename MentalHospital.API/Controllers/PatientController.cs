@@ -3,6 +3,7 @@ using MentalHospital.BLL.Interfaces;
 using AutoMapper;
 using MentalHospital.API.ViewModels;
 using MentalHospital.BLL.Models;
+using FluentValidation;
 
 namespace MentalHospital.API.Controllers
 {
@@ -12,11 +13,16 @@ namespace MentalHospital.API.Controllers
     {
         private readonly IPatientService _patientService;
         private readonly IMapper _mapper;
+        private readonly IValidator<PatientViewModel> _validator;
 
-        public PatientController(IMapper mapper, IPatientService patientService)
+        public PatientController(
+                        IMapper mapper, 
+                        IPatientService patientService, 
+                        IValidator<PatientViewModel> validator)
         {
             _mapper = mapper;
             _patientService = patientService;
+            _validator = validator;
         }
 
         [HttpGet("{id}")]
@@ -34,6 +40,7 @@ namespace MentalHospital.API.Controllers
         [HttpPost]
         public async Task<PatientViewModel> Create(PatientViewModel model)
         {
+            _validator.ValidateAndThrow(model);
             return _mapper.Map<PatientViewModel>(
                 await _patientService.Create(_mapper.Map<PatientModel>(model)));
         }

@@ -1,6 +1,6 @@
 ﻿namespace MentalHospital.DAL.Entities;
 
-public class DoctorPatient
+public class Session
 {
 	public Guid Id { get; set; }
 
@@ -11,4 +11,8 @@ public class DoctorPatient
 	public Guid PatientId { get; set; }
 
 	public Patient? Patient { get; set; }
+
+	public DateTime SessionDateTime { get; set; }
+
+	public string? Result { get; set; }
 }

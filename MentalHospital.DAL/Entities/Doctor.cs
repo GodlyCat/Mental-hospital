@@ -12,7 +12,7 @@ public class Doctor
 
 	public int? RoomNumber { get; set; }
 
-	public List<DoctorPatient> DoctorPatients { get; set; } = new();
+	public List<Session> Sessions { get; set; } = new();
 
 	public List<Patient> Patients { get; set; } = new();
 }

@@ -18,7 +18,7 @@ public class Patient
 
 	public DateTime UnregisteredAt { get; set; }
 
-	public List<DoctorPatient> DoctorPatients { get; set; } = new();
+	public List<Session> Sessions { get; set; } = new();
 
 	public List<Doctor> Doctors { get; set; } = new();
 }

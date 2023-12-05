@@ -8,7 +8,7 @@ namespace MentalHospital.DAL.Entities
 
 		public DbSet<Patient> Patients { get; set; }
 
-        public DbSet<DoctorPatient> DoctorPatients { get; set; }
+        public DbSet<Session> Sessions { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

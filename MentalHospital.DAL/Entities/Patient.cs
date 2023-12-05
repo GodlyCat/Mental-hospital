@@ -12,5 +12,7 @@
 
         public string? PersonalDoctor { get; set; }  //doctor entity is not created yet
         public int? PersonalDoctorId { get; set; }
+
+        public List<DoctorPatient> DoctorPatients { get; set; } = new();
     }
 }

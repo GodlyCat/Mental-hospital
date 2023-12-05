@@ -7,4 +7,6 @@ public class Doctor
 	public string? Name { get; set; }
 
 	public string? Department { get; set; }
+
+	public List<DoctorPatient> DoctorPatients { get; set; } = new();
 }

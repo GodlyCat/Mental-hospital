@@ -37,24 +37,24 @@ namespace MentalHospital.BLL.Tests
         [Fact]
         public async Task Delete_InputPatientModel_ReturnExpectedModel()
         {
-            mockPatientRepository.Setup(rep => rep.Delete(It.IsAny<string>()))
+            mockPatientRepository.Setup(rep => rep.Delete(It.IsAny<Guid>()))
                 .ReturnsAsync(PatientEntityData.InitPatientEntity());
 
-            var result = await patientService.Delete("AnyID");
+            var result = await patientService.Delete(Guid.NewGuid());
 
-            mockPatientRepository.Verify(rep => rep.Delete(It.IsAny<string>()));
+            mockPatientRepository.Verify(rep => rep.Delete(It.IsAny<Guid>()));
             result.Name.ShouldBeEquivalentTo(PatientModelData.InitPatientModel().Name);
         }
 
         [Fact]
         public async Task Get_InputSomeString_ReturnExpectedModel()
         {
-            mockPatientRepository.Setup(rep => rep.Get(It.IsAny<string>()))
+            mockPatientRepository.Setup(rep => rep.Get(It.IsAny<Guid>()))
                 .ReturnsAsync(PatientEntityData.InitPatientEntity());
 
-            var result = await patientService.Get("AnyID");
+            var result = await patientService.Get(Guid.NewGuid());
 
-            mockPatientRepository.Verify(rep => rep.Get(It.IsAny<string>()));
+            mockPatientRepository.Verify(rep => rep.Get(It.IsAny<Guid>()));
             result.Name.ShouldBeEquivalentTo(PatientModelData.InitPatientModel().Name);
         }
 

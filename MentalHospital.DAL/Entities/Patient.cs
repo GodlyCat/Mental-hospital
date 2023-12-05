@@ -18,7 +18,7 @@ public class Patient
 
 	public DateTime UnregisteredAt { get; set; }
 
-	public Guid PersonalDoctorId { get; set; }
+	public Guid? PersonalDoctorId { get; set; }
 
 	public Doctor? PersonalDoctor { get; set; }
 

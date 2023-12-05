@@ -14,5 +14,7 @@
         public int? PersonalDoctorId { get; set; }
 
         public List<DoctorPatient> DoctorPatients { get; set; } = new();
+
+        public List<Doctor> Doctors { get; set; } = new();
     }
 }

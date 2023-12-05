@@ -2,11 +2,9 @@
 
 public class Doctor
 {
-	public string Id { get; set; }
+	public Guid Id { get; set; }
 
 	public string? Name { get; set; }
-
-	public string? Department { get; set; }
 
 	public List<DoctorPatient> DoctorPatients { get; set; } = new();
 

@@ -2,7 +2,7 @@
 {
     public class Patient
     {
-        public string Id {  get; set; }
+        public Guid Id {  get; set; }
         public string? Name { get; set; }
         public string? Diagnosis { get; set; }
         public string? Therapy { get; set; }

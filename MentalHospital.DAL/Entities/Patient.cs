@@ -18,5 +18,9 @@ public class Patient
 
 	public DateTime UnregisteredAt { get; set; }
 
+	public int PersonalDoctorId { get; set; }
+
+	public Doctor? PersonalDoctor { get; set; }
+
 	public List<Session> Sessions { get; set; } = new();
 }

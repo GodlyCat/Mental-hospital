@@ -1,10 +1,9 @@
-﻿namespace MentalHospital.BLL.Mapper
+﻿namespace MentalHospital.BLL.Mapper;
+
+public class MappingProfile : Profile
 {
-    public class MappingProfile : Profile
-    {
-        public MappingProfile() 
-        {
-            CreateMap<Patient, PatientModel>().ReverseMap();
-        }
-    }
+	public MappingProfile() 
+	{
+		CreateMap<Patient, PatientModel>().ReverseMap();
+	}
 }

@@ -1,10 +1,9 @@
-﻿namespace MentalHospital.API.Mapper
+﻿namespace MentalHospital.API.Mapper;
+
+public class MappingProfile : Profile
 {
-    public class MappingProfile : Profile
-    {
-        public MappingProfile() 
-        {
-            CreateMap<PatientModel, PatientViewModel>().ReverseMap();
-        }
-    }
+	public MappingProfile() 
+	{
+		CreateMap<PatientModel, PatientViewModel>().ReverseMap();
+	}
 }

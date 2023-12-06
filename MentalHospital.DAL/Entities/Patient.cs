@@ -1,16 +1,26 @@
-﻿namespace MentalHospital.DAL.Entities
-{
-    public class Patient
-    {
-        public string Id {  get; set; }
-        public string? Name { get; set; }
-        public string? Diagnosis { get; set; }
-        public string? Therapy { get; set; }
-        public int ChamberNumber { get; set; }
-        public DateTime RegistredAt { get; set; }
-        public DateTime DeregistredAt { get; set; }
+﻿namespace MentalHospital.DAL.Entities;
 
-        public string? PersonalDoctor { get; set; }  //doctor entity is not created yet
-        public int? PersonalDoctorId { get; set; }
-    }
+public class Patient
+{
+	public Guid Id {  get; set; }
+
+	public string? FirstName { get; set; }
+
+	public string? LastName { get; set; }
+
+	public string? Diagnosis { get; set; }
+
+	public string? Therapy { get; set; }
+
+	public int? ChamberNumber { get; set; }
+
+	public DateTime RegisteredAt { get; set; }
+
+	public DateTime UnregisteredAt { get; set; }
+
+	public Guid? PersonalDoctorId { get; set; }
+
+	public Doctor? PersonalDoctor { get; set; }
+
+	public List<Session> Sessions { get; set; } = new();
 }

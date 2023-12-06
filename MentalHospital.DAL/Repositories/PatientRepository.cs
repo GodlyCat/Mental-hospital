@@ -15,13 +15,13 @@ namespace MentalHospital.DAL.Repositories
 
         public async Task<Patient> Create(Patient entity)
         {
-            entity.Id = Guid.NewGuid().ToString();
+            entity.Id = Guid.NewGuid();
             _context.Patients.Add(entity);
             await _context.SaveChangesAsync();
             return entity;
         }
 
-        public async Task<Patient> Delete(string id)
+        public async Task<Patient> Delete(Guid id)
         {
             var entity = _context.Patients.FirstOrDefault(p => p.Id == id);
             if (entity != null)
@@ -33,7 +33,7 @@ namespace MentalHospital.DAL.Repositories
             return entity;
         }
 
-        public async Task<Patient> Get(string id)
+        public async Task<Patient> Get(Guid id)
         {
             var entity = await _context.Patients.FirstOrDefaultAsync(p => p.Id == id);
             return entity;

@@ -24,13 +24,13 @@ namespace MentalHospital.BLL.Services
             return _mapper.Map<PatientModel>(entity);
         }
 
-        public async Task<PatientModel> Delete(string id)
+        public async Task<PatientModel> Delete(Guid id)
         {
             var entity = await _repository.Delete(id);
             return _mapper.Map<PatientModel>(entity);
         }
 
-        public async Task<PatientModel> Get(string id)
+        public async Task<PatientModel> Get(Guid id)
         {
             var entity = await _repository.Get(id);
             return _mapper.Map<PatientModel>(entity);

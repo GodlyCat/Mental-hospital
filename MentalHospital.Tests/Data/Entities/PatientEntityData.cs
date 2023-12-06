@@ -6,10 +6,10 @@
         {
             var patient = new Patient()
             {
-                Id = Guid.NewGuid().ToString(),
-                Name = "Tom",
+                Id = Guid.NewGuid(),
+                FirstName = "Tom",
                 ChamberNumber = 1,
-                RegistredAt = DateTime.Now
+                RegisteredAt = DateTime.Now
             };
 
             return patient;

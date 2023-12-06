@@ -1,16 +1,20 @@
-﻿namespace MentalHospital.BLL.Models
-{
-    public class PatientModel
-    {
-        public string Id { get; set; }
-        public string? Name { get; set; }
-        public string? Diagnosis { get; set; }
-        public string? Therapy { get; set; }
-        public int ChamberNumber { get; set; }
-        public DateTime RegistredAt { get; set; }
-        public DateTime DeregistredAt { get; set; }
+﻿namespace MentalHospital.BLL.Models;
 
-        public string? PersonalDoctor { get; set; }
-        public int? PersonalDoctorId { get; set; }
-    }
+public class PatientModel
+{
+	public Guid Id { get; set; }
+
+	public string? FirstName { get; set; }
+
+	public string? LastName { get; set; }
+
+	public string? Diagnosis { get; set; }
+
+	public string? Therapy { get; set; }
+
+	public int? ChamberNumber { get; set; }
+
+	public DateTime RegisteredAt { get; set; }
+
+	public DateTime UnregisteredAt { get; set; }
 }

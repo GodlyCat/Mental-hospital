@@ -26,7 +26,7 @@ namespace MentalHospital.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<PatientViewModel> Get(string id)
+        public async Task<PatientViewModel> Get(Guid id)
         {
             return _mapper.Map<PatientViewModel>(await _patientService.Get(id));
         }
@@ -54,7 +54,7 @@ namespace MentalHospital.API.Controllers
         }
 
         [HttpDelete]
-        public async Task<PatientViewModel> Delete(string id)
+        public async Task<PatientViewModel> Delete(Guid id)
         {
             return _mapper.Map<PatientViewModel>(await _patientService.Delete(id));
         }

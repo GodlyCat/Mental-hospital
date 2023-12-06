@@ -4,11 +4,11 @@ namespace MentalHospital.BLL.Interfaces
 {
     public interface IPatientService
     {
-        Task<PatientModel> Get(string id);
+        Task<PatientModel> Get(Guid id);
         Task<IEnumerable<PatientModel>> GetAll();
         Task<PatientModel> Create(PatientModel model);
         Task<PatientModel> Update(PatientModel model);
-        Task<PatientModel> Delete(string id);
+        Task<PatientModel> Delete(Guid id);
 
     }
 }

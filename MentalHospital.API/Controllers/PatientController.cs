@@ -1,11 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MentalHospital.BLL.Interfaces;
-using AutoMapper;
-using MentalHospital.API.ViewModels;
-using MentalHospital.BLL.Models;
-using FluentValidation;
-
-namespace MentalHospital.API.Controllers
+﻿namespace MentalHospital.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

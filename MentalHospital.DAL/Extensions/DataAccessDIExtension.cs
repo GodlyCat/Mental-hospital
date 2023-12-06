@@ -1,11 +1,4 @@
-﻿using MentalHospital.DAL.Entities;
-using MentalHospital.DAL.Interfaces;
-using MentalHospital.DAL.Repositories;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace MentalHospital.DAL.Extensions
+﻿namespace MentalHospital.DAL.Extensions
 {
     public static class DataAccessDIExtension
     {

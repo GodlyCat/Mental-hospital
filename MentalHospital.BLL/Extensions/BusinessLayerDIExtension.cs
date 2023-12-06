@@ -1,11 +1,4 @@
-﻿using MentalHospital.BLL.Interfaces;
-using MentalHospital.BLL.Models;
-using MentalHospital.BLL.Services;
-using MentalHospital.DAL.Extensions;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace MentalHospital.BLL.Extensions
+﻿namespace MentalHospital.BLL.Extensions
 {
     public static class BusinessLayerDIExtension
     {

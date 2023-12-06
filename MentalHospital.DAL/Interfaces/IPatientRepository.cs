@@ -1,6 +1,4 @@
-﻿using MentalHospital.DAL.Entities;
-
-namespace MentalHospital.DAL.Interfaces
+﻿namespace MentalHospital.DAL.Interfaces
 {
     public interface IPatientRepository
     {

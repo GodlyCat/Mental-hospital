@@ -1,10 +1,4 @@
-﻿using AutoMapper;
-using MentalHospital.BLL.Interfaces;
-using MentalHospital.BLL.Models;
-using MentalHospital.DAL.Interfaces;
-using MentalHospital.DAL.Entities;
-
-namespace MentalHospital.BLL.Services
+﻿namespace MentalHospital.BLL.Services
 {
     public class PatientService : IPatientService
     {

@@ -1,9 +1,4 @@
-﻿using FluentValidation;
-using MentalHospital.API.ViewModels;
-using System.Globalization;
-using System.Text.RegularExpressions;
-
-namespace MentalHospital.API.FluentValidation
+﻿namespace MentalHospital.API.FluentValidation
 {
     public class PatientValidator : AbstractValidator<PatientViewModel>
     {

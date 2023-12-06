@@ -1,8 +1,4 @@
-﻿using MentalHospital.BLL.Tests.Data.Entities;
-using MentalHospital.BLL.Tests.Data.Models;
-
-
-namespace MentalHospital.BLL.Tests
+﻿namespace MentalHospital.BLL.Tests
 {
     public class PatientServiceTest
     {

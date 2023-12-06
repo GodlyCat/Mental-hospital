@@ -1,6 +1,4 @@
-﻿using MentalHospital.BLL.Models;
-
-namespace MentalHospital.BLL.Interfaces
+﻿namespace MentalHospital.BLL.Interfaces
 {
     public interface IPatientService
     {

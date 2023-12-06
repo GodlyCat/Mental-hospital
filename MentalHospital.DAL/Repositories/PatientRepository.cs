@@ -1,8 +1,4 @@
-﻿using MentalHospital.DAL.Interfaces;
-using MentalHospital.DAL.Entities;
-using Microsoft.EntityFrameworkCore;
-
-namespace MentalHospital.DAL.Repositories
+﻿namespace MentalHospital.DAL.Repositories
 {
     public class PatientRepository : IPatientRepository
     {

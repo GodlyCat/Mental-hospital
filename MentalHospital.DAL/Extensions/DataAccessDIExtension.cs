@@ -6,7 +6,7 @@ public static class DataAccessDIExtension
 	{
 		services.AddDbContext<ApplicationDbContext>(options =>
 		{
-			options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+			options.UseNpgsql(config.GetConnectionString("DefaultConnection"));
 		});
 
 		services.AddScoped<IPatientRepository, PatientRepository>();

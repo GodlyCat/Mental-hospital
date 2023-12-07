@@ -1,23 +1,22 @@
-﻿namespace MentalHospital.BLL.Tests.Data.Entities
+﻿namespace MentalHospital.BLL.Tests.Data.Entities;
+
+internal static class PatientEntityData
 {
-    internal static class PatientEntityData
-    {
-        public static Patient InitPatientEntity()
-        {
-            var patient = new Patient()
-            {
-                Id = Guid.NewGuid(),
-                FirstName = "Tom",
-                ChamberNumber = 1,
-                RegisteredAt = DateTime.Now
-            };
+	public static Patient InitPatientEntity()
+	{
+		var patient = new Patient()
+		{
+			Id = Guid.NewGuid(),
+			FirstName = "Tom",
+			ChamberNumber = 1,
+			RegisteredAt = DateTime.Now
+		};
 
-            return patient;
-        }
+		return patient;
+	}
 
-        public static List<Patient> InitPatientCollection()
-        {
-            return new List<Patient>() { InitPatientEntity() };
-        }
-    }
+	public static List<Patient> InitPatientCollection()
+	{
+		return new List<Patient>() { InitPatientEntity() };
+	}
 }

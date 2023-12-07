@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace MentalHospital.DAL.Entities;
+﻿namespace MentalHospital.DAL.Entities;
 
 public class ApplicationDbContext : DbContext
 {

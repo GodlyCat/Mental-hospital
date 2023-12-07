@@ -1,9 +1,3 @@
-using MentalHospital.BLL.Extensions;
-using MentalHospital.API.Mapper;
-using MentalHospital.API.FluentValidation;
-using FluentValidation;
-using MentalHospital.API.ViewModels;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IValidator<PatientViewModel>, PatientValidator>();

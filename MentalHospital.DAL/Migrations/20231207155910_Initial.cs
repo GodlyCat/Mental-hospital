@@ -15,11 +15,11 @@ namespace MentalHospital.DAL.Migrations
                 name: "Doctors",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AppointmentTime = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RoomNumber = table.Column<int>(type: "int", nullable: true)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    FirstName = table.Column<string>(type: "text", nullable: true),
+                    LastName = table.Column<string>(type: "text", nullable: true),
+                    AppointmentTime = table.Column<string>(type: "text", nullable: true),
+                    RoomNumber = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -30,15 +30,15 @@ namespace MentalHospital.DAL.Migrations
                 name: "Patients",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Diagnosis = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Therapy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ChamberNumber = table.Column<int>(type: "int", nullable: true),
-                    RegisteredAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UnregisteredAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PersonalDoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    FirstName = table.Column<string>(type: "text", nullable: true),
+                    LastName = table.Column<string>(type: "text", nullable: true),
+                    Diagnosis = table.Column<string>(type: "text", nullable: true),
+                    Therapy = table.Column<string>(type: "text", nullable: true),
+                    ChamberNumber = table.Column<int>(type: "integer", nullable: true),
+                    RegisteredAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UnregisteredAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    PersonalDoctorId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -54,11 +54,11 @@ namespace MentalHospital.DAL.Migrations
                 name: "Sessions",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    SessionDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Result = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uuid", nullable: true),
+                    PatientId = table.Column<Guid>(type: "uuid", nullable: true),
+                    SessionDateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    Result = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

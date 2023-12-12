@@ -1,49 +1,18 @@
 ﻿namespace MentalHospital.DAL.Repositories;
 
-public class PatientRepository : IPatientRepository
+public class PatientRepository(ApplicationDbContext context) : GenericRepository<Patient>(context), IPatientRepository
 {
-	private readonly ApplicationDbContext _context;
-
-	public PatientRepository(ApplicationDbContext context)
+	public override Task<Patient?> Get(Guid id)
 	{
-		_context = context;
+		return Set
+			.Include(p => p.PersonalDoctor)
+			.FirstOrDefaultAsync(p => p.Id == id);
 	}
 
-	public async Task<Patient> Create(Patient entity)
+	public override async Task<IEnumerable<Patient>> GetAll()
 	{
-		entity.Id = Guid.NewGuid();
-		_context.Patients.Add(entity);
-		await _context.SaveChangesAsync();
-		return entity;
-	}
-
-	public async Task<Patient> Delete(Guid id)
-	{
-		var entity = _context.Patients.FirstOrDefault(p => p.Id == id);
-		if (entity != null)
-		{
-			_context.Patients.Remove(entity);
-			await _context.SaveChangesAsync();
-		}
-
-		return entity;
-	}
-
-	public async Task<Patient> Get(Guid id)
-	{
-		var entity = await _context.Patients.FirstOrDefaultAsync(p => p.Id == id);
-		return entity;
-	}
-
-	public async Task<IEnumerable<Patient>> GetAll()
-	{
-		return await _context.Patients.ToListAsync();
-	}
-
-	public async Task<Patient> Update(Patient entity)
-	{
-		_context.Entry(entity).State = EntityState.Modified;
-		await _context.SaveChangesAsync();
-		return entity;
+		return await Set
+			.Include(p => p.PersonalDoctor)
+			.ToListAsync();
 	}
 }

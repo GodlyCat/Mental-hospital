@@ -37,7 +37,7 @@ public class GenericRepository<TEntity>(ApplicationDbContext context) : IGeneric
 		return entity;
 	}
 
-	public virtual async Task Delete(Guid id)
+	public virtual async Task<TEntity?> Delete(Guid id)
 	{
 		var entity = Set.FirstOrDefault(p => p.Id == id);
 
@@ -47,5 +47,7 @@ public class GenericRepository<TEntity>(ApplicationDbContext context) : IGeneric
 
 			await Context.SaveChangesAsync();
 		}
+
+		return entity;
 	}
 }

@@ -10,5 +10,7 @@ public static class DataAccessDIExtension
 		});
 
 		services.AddScoped<IPatientRepository, PatientRepository>();
+
+		services.AddScoped<IDoctorRepository, DoctorRepository>();
 	}
 }

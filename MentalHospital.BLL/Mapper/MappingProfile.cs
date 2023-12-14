@@ -7,5 +7,7 @@ public class MappingProfile : Profile
 		CreateMap<Patient, PatientModel>().ReverseMap();
 
 		CreateMap<Doctor, DoctorModel>().ReverseMap();
+
+		CreateMap<Session, SessionModel>().ReverseMap();
 	}
 }

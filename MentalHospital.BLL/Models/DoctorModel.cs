@@ -13,4 +13,6 @@ public class DoctorModel
 	public int? RoomNumber { get; set; }
 
 	public List<PatientModel> PersonalPatients { get; set; } = new();
+
+	public List<SessionModel> Sessions { get; set; } = new();
 }

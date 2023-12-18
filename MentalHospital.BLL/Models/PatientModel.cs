@@ -17,4 +17,10 @@ public class PatientModel
 	public DateTime RegisteredAt { get; set; }
 
 	public DateTime UnregisteredAt { get; set; }
+
+	public Guid? PersonalDoctorId { get; set; }
+
+	public DoctorModel? PersonalDoctor { get; set; }
+
+	public List<SessionModel> Sessions { get; set; } = new();
 }

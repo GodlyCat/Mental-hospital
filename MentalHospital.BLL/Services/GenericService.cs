@@ -1,11 +1,11 @@
 ﻿namespace MentalHospital.BLL.Services
 {
-    internal class Service<TModel, TEntity> : IService<TModel> where TModel : class where TEntity : class
+    internal class GenericService<TModel, TEntity> : IGenericService<TModel> where TModel : class where TEntity : class
     {
-        private readonly IRepository<TEntity> _repository;
+        private readonly IGenericRepository<TEntity> _repository;
         private readonly IMapper _mapper;
 
-        public Service(IRepository<TEntity> repository, IMapper maper)
+        public GenericService(IGenericRepository<TEntity> repository, IMapper maper)
         {
             _repository = repository;
             _mapper = maper;

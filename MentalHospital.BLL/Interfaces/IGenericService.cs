@@ -1,6 +1,6 @@
 ﻿namespace MentalHospital.BLL.Interfaces
 {
-    interface IService<T> where T : class
+    interface IGenericService<T> where T : class
     {
         Task<T> Get(Guid id);
         Task<IEnumerable<T>> GetAll();

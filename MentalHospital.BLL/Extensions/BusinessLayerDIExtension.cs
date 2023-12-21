@@ -4,7 +4,7 @@ public static class BusinessLayerDIExtension
 {
 	public static void AddBusinessLayer(this IServiceCollection services, IConfiguration config)
 	{
-		services.AddScoped<IGenericService<PatientModel>, PatientService>();
+		services.AddScoped<IPatientService, PatientService>();
 		services.AddDataAccess(config);
 	}
 }

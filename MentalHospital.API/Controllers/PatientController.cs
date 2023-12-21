@@ -4,13 +4,13 @@
 [ApiController]
 public class PatientController : ControllerBase
 {
-	private readonly IGenericService<PatientModel> _patientService;
+	private readonly IPatientService _patientService;
 	private readonly IMapper _mapper;
 	private readonly IValidator<PatientViewModel> _validator;
 
 	public PatientController(
 		IMapper mapper,
-        IGenericService<PatientModel> patientService, 
+        IPatientService patientService, 
 		IValidator<PatientViewModel> validator)
 	{
 		_mapper = mapper;

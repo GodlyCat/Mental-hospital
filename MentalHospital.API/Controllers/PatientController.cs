@@ -9,8 +9,8 @@ public class PatientController : ControllerBase
 	private readonly IValidator<PatientViewModel> _validator;
 
 	public PatientController(
-		IMapper mapper, 
-		IPatientService patientService, 
+		IMapper mapper,
+        IPatientService patientService, 
 		IValidator<PatientViewModel> validator)
 	{
 		_mapper = mapper;

@@ -1,11 +1,7 @@
-﻿namespace MentalHospital.BLL.Interfaces;
-
-public interface IPatientService
+﻿namespace MentalHospital.BLL.Interfaces
 {
-	Task<PatientModel> Get(Guid id);
-	Task<IEnumerable<PatientModel>> GetAll();
-	Task<PatientModel> Create(PatientModel model);
-	Task<PatientModel> Update(PatientModel model);
-	Task<PatientModel> Delete(Guid id);
+    public interface IPatientService : IGenericService<PatientModel>
+    {
 
+    }
 }

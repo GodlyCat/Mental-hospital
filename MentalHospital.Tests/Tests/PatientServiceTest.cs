@@ -1,8 +1,10 @@
-﻿namespace MentalHospital.BLL.Tests;
+﻿using MentalHospital.BLL.Interfaces;
+
+namespace MentalHospital.BLL.Tests;
 
 public class PatientServiceTest
 {
-	private readonly PatientService patientService;
+	private readonly GenericService<PatientModel, Patient> patientService;
 	private readonly Mock<IPatientRepository> mockPatientRepository;
 
 	public PatientServiceTest()
@@ -14,7 +16,7 @@ public class PatientServiceTest
 		mockMapper.Setup(mp => mp.Map<IEnumerable<PatientModel>>(It.IsAny<IEnumerable<Patient>>())).Returns(PatientModelData.InitPatientCollection());
 		mockMapper.Setup(mp => mp.Map<Patient>(It.IsAny<PatientModel>())).Returns(PatientEntityData.InitPatientEntity());
 
-		patientService = new PatientService(mockPatientRepository.Object, mockMapper.Object);
+		patientService = new GenericService<PatientModel, Patient>(mockPatientRepository.Object, mockMapper.Object);
 	}
 
 	[Fact]

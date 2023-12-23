@@ -1,7 +1,6 @@
-﻿namespace MentalHospital.BLL.Interfaces
-{
-    public interface IPatientService : IGenericService<PatientModel>
-    {
+﻿namespace MentalHospital.BLL.Interfaces;
 
-    }
+public interface IPatientService : IGenericService<PatientModel>
+{
+
 }

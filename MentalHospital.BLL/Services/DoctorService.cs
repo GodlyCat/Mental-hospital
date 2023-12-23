@@ -2,7 +2,7 @@
 
 public class DoctorService : GenericService<DoctorModel, Doctor>, IDoctorService
 {
-	public DoctorService(IGenericRepository<Doctor> repository, IMapper maper) : base(repository, maper)
+	public DoctorService(IGenericRepository<Doctor> repository, IMapper mapper) : base(repository, mapper)
 	{
 	}
 }

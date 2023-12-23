@@ -3,6 +3,7 @@ using System;
 using MentalHospital.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MentalHospital.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231223204921_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,6 +66,9 @@ namespace MentalHospital.DAL.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("text");
 
+                    b.Property<Guid?>("PersonalDoctorId")
+                        .HasColumnType("uuid");
+
                     b.Property<DateTime>("RegisteredAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -73,6 +79,8 @@ namespace MentalHospital.DAL.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PersonalDoctorId");
 
                     b.ToTable("Patients");
                 });
@@ -104,6 +112,15 @@ namespace MentalHospital.DAL.Migrations
                     b.ToTable("Sessions");
                 });
 
+            modelBuilder.Entity("MentalHospital.DAL.Entities.Patient", b =>
+                {
+                    b.HasOne("MentalHospital.DAL.Entities.Doctor", "PersonalDoctor")
+                        .WithMany("PersonalPatients")
+                        .HasForeignKey("PersonalDoctorId");
+
+                    b.Navigation("PersonalDoctor");
+                });
+
             modelBuilder.Entity("MentalHospital.DAL.Entities.Session", b =>
                 {
                     b.HasOne("MentalHospital.DAL.Entities.Doctor", "Doctor")
@@ -121,6 +138,8 @@ namespace MentalHospital.DAL.Migrations
 
             modelBuilder.Entity("MentalHospital.DAL.Entities.Doctor", b =>
                 {
+                    b.Navigation("PersonalPatients");
+
                     b.Navigation("Sessions");
                 });
 

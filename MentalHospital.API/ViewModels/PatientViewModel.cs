@@ -18,9 +18,5 @@ public class PatientViewModel
 
 	public DateTime UnregisteredAt { get; set; }
 
-	public Guid? PersonalDoctorId { get; set; }
-
-	public DoctorViewModel? PersonalDoctor { get; set; }
-
 	public List<SessionViewModel> Sessions { get; set; } = new();
 }

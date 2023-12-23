@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MentalHospital.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231207155910_Initial")]
-    partial class Initial
+    [Migration("20231223205542_PersonalDoctorRemoved")]
+    partial class PersonalDoctorRemoved
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,9 +66,6 @@ namespace MentalHospital.DAL.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("text");
 
-                    b.Property<Guid?>("PersonalDoctorId")
-                        .HasColumnType("uuid");
-
                     b.Property<DateTime>("RegisteredAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -79,8 +76,6 @@ namespace MentalHospital.DAL.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PersonalDoctorId");
 
                     b.ToTable("Patients");
                 });
@@ -112,15 +107,6 @@ namespace MentalHospital.DAL.Migrations
                     b.ToTable("Sessions");
                 });
 
-            modelBuilder.Entity("MentalHospital.DAL.Entities.Patient", b =>
-                {
-                    b.HasOne("MentalHospital.DAL.Entities.Doctor", "PersonalDoctor")
-                        .WithMany("PersonalPatients")
-                        .HasForeignKey("PersonalDoctorId");
-
-                    b.Navigation("PersonalDoctor");
-                });
-
             modelBuilder.Entity("MentalHospital.DAL.Entities.Session", b =>
                 {
                     b.HasOne("MentalHospital.DAL.Entities.Doctor", "Doctor")
@@ -138,8 +124,6 @@ namespace MentalHospital.DAL.Migrations
 
             modelBuilder.Entity("MentalHospital.DAL.Entities.Doctor", b =>
                 {
-                    b.Navigation("PersonalPatients");
-
                     b.Navigation("Sessions");
                 });
 

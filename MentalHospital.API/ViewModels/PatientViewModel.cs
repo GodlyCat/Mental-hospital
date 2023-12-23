@@ -21,4 +21,6 @@ public class PatientViewModel
 	public Guid? PersonalDoctorId { get; set; }
 
 	public DoctorViewModel? PersonalDoctor { get; set; }
+
+	public List<SessionViewModel> Sessions { get; set; } = new();
 }

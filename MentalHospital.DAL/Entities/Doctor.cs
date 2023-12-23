@@ -10,7 +10,5 @@ public class Doctor : Entity
 
 	public int? RoomNumber { get; set; }
 
-	public List<Patient> PersonalPatients { get; set; } = new();
-
 	public List<Session> Sessions { get; set; } = new();
 }

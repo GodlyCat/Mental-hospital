@@ -12,7 +12,5 @@ public class DoctorViewModel
 
 	public int? RoomNumber { get; set; }
 
-	public List<PatientViewModel> PersonalPatients { get; set; } = new();
-
 	public List<SessionViewModel> Sessions { get; set; } = new();
 }

@@ -2,7 +2,7 @@
 
 public class SessionService : GenericService<SessionModel, Session>, ISessionService
 {
-	public SessionService(IGenericRepository<Session> repository, IMapper mapper) : base(repository, mapper)
+	public SessionService(ISessionRepository repository, IMapper mapper) : base(repository, mapper)
 	{
 	}
 }

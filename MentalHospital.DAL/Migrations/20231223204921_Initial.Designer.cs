@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MentalHospital.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231207155910_Initial")]
+    [Migration("20231223204921_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
